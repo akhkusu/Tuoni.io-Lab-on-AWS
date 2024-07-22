@@ -1,4 +1,4 @@
-<h1>Kali Linux C2 with Tuoni on AWS</h1>
+<h1>Tuoni Lab on AWS</h1>
 <h2>Description</h2>
 In this lab, I set up a command and control (C2) environment using Kali Linux and Windows Server 2022 on AWS. I installed <b><a href="https://www.tuoni.io" target="_blank">Tuoni.io</a></b> on the Kali Linux instance to remotely control the Windows Server. This setup demonstrates the basics of C2 operations, allowing for remote execution of commands on the Windows server using the Tuoni platform.
 <br />
