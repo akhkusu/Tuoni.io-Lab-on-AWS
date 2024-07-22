@@ -1,59 +1,78 @@
-<h1>Tuoni Lab on AWS</h1>
+<h1>Kali Linux C2 with Tuoni on AWS</h1>
+
 <h2>Description</h2>
-In this lab, I set up a command and control (C2) environment using Kali Linux and Windows Server 2022 on AWS. I installed <b><a href="https://www.tuoni.io" target="_blank">Tuoni.io</a></b> on the Kali Linux instance to remotely control the Windows Server. This setup demonstrates the basics of C2 operations, allowing for remote execution of commands on the Windows server using the Tuoni platform.
-<br />
-<h2>Utilities and Environment Used</h2>
+<p>In this lab, I set up a command and control (C2) environment using Kali Linux and Windows Server 2022 on AWS. I installed <b><a href="https://www.tuoni.io" target="_blank">Tuoni.io</a></b> on the Kali Linux instance to remotely control the Windows Server. This setup demonstrates the basics of C2 operations, allowing for remote execution of commands on the Windows server using the Tuoni platform.</p>
 
-    Kali Linux
-    Windows Server 2022
-    Tuoni.io
-    AWS Cloud
-    AWS EC2
+<h2>Environments Used</h2>
+<ul>
+    <li><b>Cloud Platform</b>: AWS</li>
+    <li><b>Virtual Machines</b>:
+        <ul>
+            <li>Kali Linux</li>
+            <li>Windows Server 2022</li>
+        </ul>
+    </li>
+</ul>
 
+<h2>Lab Walk-through</h2>
 
-<h2>Program Walk-Through:</h2>
-<p >
-<strong>1. Setting up the Environment:</strong><br/>
-Initially, I created two virtual machines on AWS: one running Kali Linux and the other running Windows Server 2022. The AWS EC2 instances were configured with appropriate security groups to allow for necessary network traffic between the machines.
-<br />
-<img src="img/aws_setup.png" height="80%" width="80%" alt="AWS EC2 Setup"/>
-<br />
-<br />
-<br />
+<h3>Setting Up the Environment</h3>
+<ol>
+    <li><b>Creating AWS EC2 Instances</b>: I set up two EC2 instances on AWS, one with Kali Linux and the other with Windows Server 2022.</li>
+</ol>
 
-<strong>2. Installing Tuoni.io on Kali Linux:</strong><br/>
-I installed the Tuoni.io command and control server on the Kali Linux instance. Tuoni is a powerful open-source tool that allows for easy management and interaction with compromised systems.
-<br />
-<img src="img/tuoni_installation.png" height="80%" width="80%" alt="Tuoni Installation"/>
-<br />
-<br />
-<br />
-
-<strong>3. Deploying and Executing the C2 Agent on Windows Server:</strong><br/>
-Once Tuoni was set up, I deployed the Tuoni C2 agent on the Windows Server 2022 instance. The agent allowed me to establish a remote connection back to the Tuoni server on Kali Linux. Through this connection, I was able to execute commands on the Windows Server using the Tuoni terminal.
-<br />
-<img src="img/agent_execution.png" height="80%" width="80%" alt="Agent Execution"/>
-<br />
-<br />
-<br />
-
-<strong>4. Remote Command Execution:</strong><br/>
-With the agent running, I demonstrated remote control capabilities by executing various commands on the Windows Server through the Tuoni C2 server. This included basic tasks such as file manipulation and system information gathering.
-<br />
-<img src="img/remote_execution.png" height="80%" width="80%" alt="Remote Command Execution"/>
-<br />
-<br />
-<br />
-
-<strong>5. Monitoring and Analysis:</strong><br/>
-Throughout the process, I monitored the network traffic and system logs to analyze the behavior of the C2 operations. This included observing the command execution flow from the Tuoni server to the Windows agent.
-<br />
-<img src="img/monitoring_analysis.png" height="80%" width="80%" alt="Monitoring and Analysis"/>
-<br />
+<p align="center">
+    <img src="img/Screenshot 2024-07-18 163857.png" height="80%" width="80%" alt="AWS EC2 Setup"/>
 </p>
-<h2>Conclusion:</h2>
-This lab provided valuable insights into the workings of a command and control (C2) environment using Tuoni.io. It demonstrated the ability to set up and manage a C2 server, deploy agents, and perform remote operations. Such setups are crucial for understanding the mechanisms behind cyber operations and enhancing security posture against potential threats.
-<br />
+<p align="center">
+    <img src="img/Screenshot 2024-07-18 181341.png" height="80%" width="80%" alt="AWS EC2 Setup"/>
+</p>
+
+
+<h3>Installing Tuoni.io on Kali Linux</h3>
+<ol>
+    <li><b>Download and Install Tuoni.io</b>: On the Kali Linux instance, I downloaded and installed the <a href="https://www.tuoni.io" target="_blank">Tuoni.io</a></li>
+</ol>
+
+
+<h3>Deploying the C2 Agent on Windows Server</h3>
+<ol>
+    <li><b>Generating and Running the Agent</b>: Generated the Tuoni C2 agent on the Kali Linux server and executed it on the Windows Server 2022 instance.</li>
+</ol>
+
+<p align="center">
+    <img src="img/Screenshot 2024-07-18 235545.png" height="80%" width="80%" alt="Agent Execution"/>
+</p>
+
+<h3>Remote Command Execution</h3>
+<p>With the C2 agent running on the Windows Server, I used the Tuoni.io command and control server to execute remote commands. This included file system exploration and system information retrieval.</p>
+
+
+<p align="center">
+    <img src="img/Screenshot 2024-07-18 231038.png" height="80%" width="80%" alt="Remote Command Execution"/>
+</p>
+<p align="center">
+    <img src="img/Screenshot 2024-07-18 185700.png" height="80%" width="80%" alt="Remote Command Execution"/>
+</p>
+
+
+<ol>
+    <li><b>Downloading an Image from Windows to Kali Linux</b>: As part of the C2 operations, I demonstrated how to download a file from the Windows Server to the Kali Linux machine using Tuoni.io. Specifically, I downloaded an image of a cat from the Windows machine.</li>
+</ol>
+
+
+<p align="center">
+    <img src="img/Screenshot 2024-07-18 234804.png" height="80%" width="80%" alt="Cat Image on Windows"/>
+</p>
+
+<p align="center">
+    <img src="img/Screenshot 2024-07-18 234942.png" height="80%" width="80%" alt="Cat Image on Kali Linux"/>
+</p>
+
+
+
+<h2>Conclusion</h2>
+<p>This lab provided valuable insights into the workings of a command and control (C2) environment using <a href="https://www.tuoni.io" target="_blank">Tuoni.io</a>. 
 <!--
  ```diff
 - text in red
@@ -61,7 +80,3 @@ This lab provided valuable insights into the workings of a command and control (
 ! text in orange
 # text in gray
 @@ text in purple (and bold)@@
-```
---!>
-
----
